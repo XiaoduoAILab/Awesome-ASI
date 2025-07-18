@@ -40,7 +40,7 @@
 |--------------------|-----------------------------------------|-----------------------------------------|
 | **ToolBench**（Qin等, 2023/24） | 多任务工具调用测试集                        | 覆盖动态多轮交互与长期推理 \[10]             |
 | **BFCL**（Patil等, 2025） | 千级调用任务排行榜                          | 顶级模型单次调用优异，但记忆与决策链能力不足 \[11] |
-| **ToolScan**（Kokane等, 2024） | 错误诊断导向，总结常见错误类型                | 现有基准忽略错误模式分析 \[25]              |
+| **ToolScan**（Kokane等, 2024） | 错误诊断导向，总结常见错误类型                | 现有基准忽略错误模式分析 \[17]              |
 
 ### 优化技术
 - **EASYTOOL**（Yuan等, 2024）：将复杂工具文档提炼为统一简明说明，降低调用token数并提升性能 \[12]。  
@@ -50,12 +50,12 @@
 
 ## 人类反馈对齐
 ### 方法演进
-- **MTPO**（Shan等, 2024）：在多轮对话中利用用户反馈优化模型 \[20]。  
-- **分层强化学习**（如REFUEL, MT-Arch）：引导模型长期规划，提升对话质量与目标完成率 \[20]。  
+- **MTPO**（Shan等, 2024）：在多轮对话中利用用户反馈优化模型 \[13]。  
+- **分层强化学习**（如REFUEL, MT-Arch）：引导模型长期规划，提升对话质量与目标完成率 \[13]。  
 
 ### 人工评测机制
-- **LLM-as-Judge**：GPT-4等作为评价者与人类评测一致性达80%+，可替代部分人工评估 \[21]。  
-- **Chatbot Arena**：用户对比模型回答 + LLM自动评价，兼顾质量与成本 \[21]。  
+- **LLM-as-Judge**：GPT-4等作为评价者与人类评测一致性达80%+，可替代部分人工评估 \[14]。  
+- **Chatbot Arena**：用户对比模型回答 + LLM自动评价，兼顾质量与成本 \[14]。  
 
 ---
 
@@ -63,7 +63,7 @@
 | 类别               | 基准名称                     | 核心能力评测方向                          |
 |--------------------|----------------------------|-----------------------------------------|
 | **基础能力**       | AGIEval（Zhong等, 2023）    | 人类标准化考试反映理解与推理 \[2] |
-| **跨环境任务**     | CAMEL/CRAB（Xu等, 2024-25） | 多界面任务完成率（GPT-4单代理最高38%）\[22] |
+| **跨环境任务**     | CAMEL/CRAB（Xu等, 2024-25） | 多界面任务完成率（GPT-4单代理最高38%）\[15] |
 | **工具调用**       | ToolBench, BFCL            | API调用准确率与鲁棒性 \[10][11]             |
 | **多轮对话**       | MT-Bench-101, MT-Eval      | 对话细节与交互模式划分 \[5][6]              |
 | **工业框架**       | LangSmith, Agent-Evals     | 记录生成过程并提供辅助评判                  |
@@ -82,7 +82,7 @@
 | **可扩展性** | 动态更新大规模测试集，跟进模型升级               |
 | **通用性**   | 构建跨任务/领域评估体系，提升泛化能力            |
 | **推理能力** | 引入复杂场景与层级目标，考核长期决策能力          |
-| **评估机制** | 模型自检验增强可靠性 \[24] |
+| **评估机制** | 模型自检验增强可靠性                            |
 
 > **核心目标**：结合迭代反馈、强化学习与多指标框架，推动智能体在真实场景中的稳健运行。
 
@@ -101,16 +101,15 @@
 10. Guo et al. ToolBench: A Benchmark Suite for Assessing LLM Tool Use. ICLR 2024  
 11. Patil et al. Berkeley Function Calling Leaderboard (BFCL): From Tool Use to Agentic Evaluation of LLMs. ICML 2025  
 12. Yuan et al. EASYTOOL: Enhancing LLM-based Agents with Concise Tool Instruction. arXiv:2401.06201 (2024)  
-20. Shan et al. MTPO (Multi-turn Preference Optimization) (2024)  
-21. Zheng et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS 2023  
-22. Xu et al. CRAB: Cross-environment Agent Benchmark for Multimodal Language Model Agents. ACL Findings 2025  
-23. Yao et al. WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents. NeurIPS 2022  
-24. 未来研究方向总结  
-25. Kokane et al. ToolScan: A Benchmark for Characterizing Errors in Tool-Use LLMs. arXiv:2411.13547 (2024)  
-26. Yu et al. Multi-Mission Tool Bench: Assessing the Robustness of LLM Agents. arXiv:2504.02623 (2025)  
-27. Ma et al. AgentBoard: Evaluating LLMs in Human-Machine Collaboration. arXiv:2404.XXXX (2024)  
-28. Wang et al. MintBench: A Benchmark for Multi-Agent Interactive Tasks. arXiv:2311.XXXXX (2023)  
-29. Liu et al. AgentLite: Lightweight Agent Benchmark for LLMs. arXiv:2405.XXXXX (2024)  
+13. Shan et al. MTPO (Multi-turn Preference Optimization) (2024)  
+14. Zheng et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. NeurIPS 2023  
+15. Xu et al. CRAB: Cross-environment Agent Benchmark for Multimodal Language Model Agents. ACL Findings 2025  
+16. Yao et al. WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents. NeurIPS 2022    
+17. Kokane et al. ToolScan: A Benchmark for Characterizing Errors in Tool-Use LLMs. arXiv:2411.13547 (2024)  
+18. Yu et al. Multi-Mission Tool Bench: Assessing the Robustness of LLM Agents. arXiv:2504.02623 (2025)  
+19. Ma et al. AgentBoard: Evaluating LLMs in Human-Machine Collaboration. arXiv:2401.13178 (2024)  
+20. Wang et al. MintBench: A Benchmark for Multi-Agent Interactive Tasks. arXiv:2309.10691 (2023)  
+21. Liu et al. AgentLite: Lightweight Agent Benchmark for LLMs. arXiv:2402.15538 (2024)  
 
 ---
 
@@ -120,21 +119,21 @@
 | [1]  | AgentBench: Evaluating LLMs as Agents | [arXiv:2308.03688](https://arxiv.org/abs/2308.03688) |
 | [2]  | AGiEval: A Human-Centric Benchmark | [ResearchGate](https://www.researchgate.net/publication/370000870_AGiEval_A_Human-Centric_Benchmark_for_Evaluating_Foundation_Models) |
 | [3]  | ECom-Bench | [arXiv:2507.05639v1](https://arxiv.org/html/2507.05639v1) |
-| [6]  | Automated test generation... | [ACL Anthology](https://aclanthology.org/2024-genbench-1.4/) |
-| [8]  | MT-Bench-101 | [ACL Anthology](https://aclanthology.org/2024.acl-long.401/) |
-| [10] | MT-Eval | [ACL Anthology](https://aclanthology.org/2024.emnlp-main.1124/) |
-| [11] | BotChat | [arXiv:2310.13650](https://arxiv.org/html/2310.13650) |
-| [13] | Evaluating Very Long-Term... | [arXiv:2402.17753](https://arxiv.org/abs/2402.17753) |
-| [15] | ToolBench | ICLR 2024 Spotlight |
-| [16] | Berkeley Function Calling... | [OpenReview](https://openreview.net/forum?id=2GmDdhBdDk) |
-| [18] | EASYTOOL | [arXiv:2401.06201](https://arxiv.org/abs/2401.06201) |
-| [21] | Judging LLM-as-a-Judge... | [arXiv:2306.05685](https://arxiv.org/abs/2306.05685) |
-| [22] | CRAB | [arXiv:2407.01511](https://arxiv.org/abs/2407.01511) |
-| [23] | WebShop | NeurIPS 2022 |
-| [25] | ToolScan | [arXiv:2411.13547v2](https://arxiv.org/html/2411.13547v2) |
-| [26] | Multi-Mission Tool Bench | [arXiv:2504.02623](https://arxiv.org/abs/2504.02623) |
-| [27] | AgentBoard | [arXiv:2404.XXXX](https://arxiv.org/abs/2404.XXXX) |
-| [28] | MintBench | [arXiv:2311.XXXXX](https://arxiv.org/abs/2311.XXXXX) |
-| [29] | AgentLite | [arXiv:2405.XXXXX](https://arxiv.org/abs/2405.XXXXX) |
+| [4]  | Automated test generation... | [ACL Anthology](https://aclanthology.org/2024-genbench-1.4/) |
+| [5]  | MT-Bench-101 | [ACL Anthology](https://aclanthology.org/2024.acl-long.401/) |
+| [6] | MT-Eval | [ACL Anthology](https://aclanthology.org/2024.emnlp-main.1124/) |
+| [7] | BotChat | [arXiv:2310.13650](https://arxiv.org/html/2310.13650) |
+| [8] | Evaluating Very Long-Term... | [arXiv:2402.17753](https://arxiv.org/abs/2402.17753) |
+| [10] | ToolBench | ICLR 2024 Spotlight |
+| [11] | Berkeley Function Calling... | [OpenReview](https://openreview.net/forum?id=2GmDdhBdDk) |
+| [12] | EASYTOOL | [arXiv:2401.06201](https://arxiv.org/abs/2401.06201) |
+| [14] | Judging LLM-as-a-Judge... | [arXiv:2306.05685](https://arxiv.org/abs/2306.05685) |
+| [15] | CRAB | [arXiv:2407.01511](https://arxiv.org/abs/2407.01511) |
+| [16] | WebShop | NeurIPS 2022 |
+| [17] | ToolScan | [arXiv:2411.13547v2](https://arxiv.org/html/2411.13547v2) |
+| [18] | Multi-Mission Tool Bench | [arXiv:2504.02623](https://arxiv.org/abs/2504.02623) |
+| [19] | AgentBoard | [arXiv:2401.13178](https://arxiv.org/abs/2401.13178) |
+| [20] | MintBench | [arXiv:2311.XXXXX](https://arxiv.org/abs/2309.10691) |
+| [21] | AgentLite | [arXiv:2405.XXXXX](https://arxiv.org/abs/2402.15538) |
 
 
